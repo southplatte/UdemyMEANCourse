@@ -1,2 +1,2 @@
 # udemyMean
-For Udemy MEAN course
+For Udemy MEAN course - Base for course work
