@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-post-create',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './post-create.component.html',
   styleUrl: './post-create.component.css'
 })
 export class PostCreateComponent {
   createPostMsg = 'Create New Post: ';
+  enteredValue = '';
+  
+  newPost = 'NO CONTENT';
+  onAddPost(){
+    this.newPost = this.enteredValue;
+  }
 }
