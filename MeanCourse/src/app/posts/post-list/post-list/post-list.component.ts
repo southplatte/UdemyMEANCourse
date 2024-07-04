@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatExpansionPanelHeader } from '@angular/material/expansion';
+import { NgFor } from '@angular/common';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [MatExpansionPanel, MatAccordion, MatExpansionPanelHeader],
+  imports: [MatExpansionPanel, MatAccordion, MatExpansionPanelHeader, NgFor, NgForOf],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.css'
 })
