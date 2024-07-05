@@ -7,6 +7,9 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list/post-list.component';
 import { HeaderComponent } from './header/header/header.component';
 
+//import interfaces here
+import { Post } from './posts/posts.model';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +22,7 @@ import { HeaderComponent } from './header/header/header.component';
 
 export class AppComponent {
 
-  storedPosts = [];
+  storedPosts: Post[] = [];
 
   onPostAdded(post) {
     this.storedPosts.push(post);

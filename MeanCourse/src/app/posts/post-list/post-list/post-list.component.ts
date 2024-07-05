@@ -6,6 +6,9 @@ import { NgFor } from '@angular/common';
 import { NgForOf } from '@angular/common';
 import { NgIf } from '@angular/common';
 
+//import interfaces here
+import { Post} from '../../posts.model';
+
 @Component({
   selector: 'app-post-list',
   standalone: true,
@@ -22,6 +25,6 @@ export class PostListComponent {
 
   // ]
 
-  @Input() posts = [];
+  @Input() posts: Post[] = [];
 
 }

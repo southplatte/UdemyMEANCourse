@@ -8,6 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 //do not include these in the component imports
 //import { EventEmitter } from '@angular/core';
 
+//import interfaces here
+import { Post } from '../posts.model';
+
 @Component({
   selector: 'app-post-create',
   standalone: true,
@@ -20,12 +23,12 @@ export class PostCreateComponent {
   createPostMsg = 'Create New Post: ';
   enteredTitle = '';
   enteredContent = '';
-  @Output() postCreated = new EventEmitter();
+  @Output() postCreated = new EventEmitter<Post>();
   
   newPost = 'NO CONTENT';
   onAddPost(){
     //this.newPost = this.enteredValue;
-    const post = {
+    const post: Post = {
       title: this.enteredTitle, 
       content: this.enteredContent
     }
