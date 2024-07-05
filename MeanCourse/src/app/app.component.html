@@ -3,13 +3,13 @@
 
   <div class="content">
     
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! {{message}} {{ name }}! Your app is running on the localhost:4200. 🎉</p>
+      <!-- <h1>Hello, {{ title }}</h1>
+      <p>Congratulations! {{message}} {{ name }}! Your app is running on the localhost:4200. 🎉</p> -->
 
       <!--include the app-post-create component-->
-      <app-post-create></app-post-create>
+      <app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
       <!--include the app-post-list component-->
-      <app-post-list></app-post-list>
+      <app-post-list [posts]="storedPosts"></app-post-list>
     </div>
 </main>
 <router-outlet />

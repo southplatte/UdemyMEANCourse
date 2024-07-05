@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatExpansionPanelHeader } from '@angular/material/expansion';
@@ -22,6 +22,6 @@ export class PostListComponent {
 
   // ]
 
-  posts = []
+  @Input() posts = [];
 
 }

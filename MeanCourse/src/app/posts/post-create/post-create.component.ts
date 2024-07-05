@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+
+//do not include these in the component imports
+//import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post-create',
@@ -11,13 +14,21 @@ import { MatCardModule } from '@angular/material/card';
   imports: [FormsModule, MatInputModule, MatButtonModule, MatIconModule, MatCardModule],
   templateUrl: './post-create.component.html',
   styleUrl: './post-create.component.css'
+
 })
 export class PostCreateComponent {
   createPostMsg = 'Create New Post: ';
-  enteredValue = '';
+  enteredTitle = '';
+  enteredContent = '';
+  @Output() postCreated = new EventEmitter();
   
   newPost = 'NO CONTENT';
   onAddPost(){
-    this.newPost = this.enteredValue;
+    //this.newPost = this.enteredValue;
+    const post = {
+      title: this.enteredTitle, 
+      content: this.enteredContent
+    }
+    this.postCreated.emit(post);
   }
 }

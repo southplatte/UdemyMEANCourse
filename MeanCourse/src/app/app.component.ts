@@ -18,10 +18,12 @@ import { HeaderComponent } from './header/header/header.component';
 
 
 export class AppComponent {
-  title = 'Mean Course 2024';
-  name = "Bill N";
-  message = "Welcome, ";
-  newMessage = "testing original component";
+
+  storedPosts = [];
+
+  onPostAdded(post) {
+    this.storedPosts.push(post);
+  }
 
 }
 
