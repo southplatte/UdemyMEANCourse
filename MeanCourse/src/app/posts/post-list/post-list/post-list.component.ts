@@ -2,6 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatExpansionPanelHeader } from '@angular/material/expansion';
+import { MatExpansionPanelActionRow } from '@angular/material/expansion';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { NgFor } from '@angular/common';
 import { NgForOf } from '@angular/common';
 import { NgIf } from '@angular/common';
@@ -15,7 +18,7 @@ import { PostsService } from '../../posts.service';
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [MatExpansionPanel, MatAccordion, MatExpansionPanelHeader, NgFor, NgForOf, NgIf],
+  imports: [MatExpansionPanel, MatAccordion, MatExpansionPanelHeader, NgFor, NgForOf, NgIf, MatExpansionPanelActionRow, MatButtonModule, MatIconModule],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.css'
 })
