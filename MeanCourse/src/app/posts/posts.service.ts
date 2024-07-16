@@ -13,16 +13,17 @@ export class PostsService {
 
    constructor (private http: HttpClient) {};
 
-   getPosts(){
-    this.http.get<{message: string, posts: Post[]}>('http://localhost:3000/api/posts')
-      .subscribe((postData) => {
-         this.posts = postData.posts;
-         this.postsUpdated.next([...this.posts]);
-         return this.posts;
-      });
-   }
+   getPosts() {
+      this.http
+        .get<{ message: string; posts: Post[] }>(
+          "http://localhost:3000/api/posts"
+        ).subscribe((postData) => {
+          this.posts = postData.posts;
+          this.postsUpdated.next([...this.posts]);
+        });
+    }
 
-   getPostUpdateListenter(){
+   getPostUpdateListener(){
     return this.postsUpdated.asObservable();
    }
 
