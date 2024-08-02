@@ -7,6 +7,7 @@ const Post = require('./models/post');
 
 const app = express();
 
+
 mongoose.connect('mongodb+srv://bnab:XL883cSporty@udemymeanapp.txzcwf6.mongodb.net/?retryWrites=true&w=majority&appName=UdemyMEANApp')
     .then(() => {
         console.log('Database connection Successfull....')
@@ -49,9 +50,12 @@ app.get('/api/posts/', (req, res, next) => {
     
 });
 
-app.delete('/api/posts:id', (req, res, next) => {
-    console.log(req.params.id);
-    res.status(200).json({meessage: 'Post deleted.'})
+app.delete('/api/posts/:id', (req, res, next) => {
+    
+    Post.deleteOne({_id: req.params.id}).then(result => {
+        console.log(result);
+        res.status(200).json({meessage: 'Post deleted.'})
+    });
 });
 
 module.exports = app;
